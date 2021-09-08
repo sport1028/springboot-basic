@@ -2,10 +2,7 @@ package com.springbootbasic.hellospring.repository;
 
 import com.springbootbasic.hellospring.domain.Member;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository {
 
@@ -34,7 +31,10 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public List<Member> findAll() {
-
         return new ArrayList<>(store.values());
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 }
